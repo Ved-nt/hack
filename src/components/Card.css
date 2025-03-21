@@ -1,0 +1,59 @@
+.card {
+    border: 1px solid #333333; /* Dark border */
+    border-radius: 12px; /* Slightly rounded corners */
+    width: 350px; /* Fixed width for each card */
+    height: 200px; /* Fixed height for uniformity */
+    margin: 10px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    background-color: #1a1a1a; /* Slightly lighter black for cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slight scale on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+    border-color: #ff0000; /* Change border color to red on hover */
+}
+
+.card-top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #ff0000; /* Red color for the LIVE label */
+    font-weight: bold;
+    animation: flicker 1s infinite alternate; /* Flickering animation */
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.card-middle {
+    margin: 20px 0;
+    color: #ffffff; /* White text for problem statement */
+    font-size: 1.2rem;
+}
+
+.card-bottom-right {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ffffff; /* White text for the arrow */
+    transition: color 0.3s ease;
+}
+
+.card-bottom-right:hover {
+    color: #00cc70; /* Slightly darker green on hover */
+}

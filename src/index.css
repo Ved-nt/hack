@@ -1,0 +1,221 @@
+:root {
+  --primary: #8b5cf6;
+  --primary-dark: #7c3aed;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+  --dark: #0f172a;
+  --darker: #030712;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--darker);
+  color: white;
+}
+
+/* Center the heading */
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.App-header {
+  margin-bottom: 40px;
+}
+
+.App-header h1 {
+  font-size: 3rem;
+  color: white;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Card Container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+  max-width: 1200px; /* Limit container width */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Card Styling */
+.card {
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: var(--dark);
+  transition: all 0.3s ease;
+  position: relative; /* For positioning LIVE and arrow */
+  min-height: 300px; /* Increased card size */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4);
+}
+
+/* LIVE label */
+.card .live {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ff0000; /* Red color */
+  font-weight: bold;
+  animation: flicker 1s infinite alternate; /* Flickering animation */
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Card Content */
+.card h3 {
+  font-size: 1.75rem; /* Increased font size */
+  font-weight: 600;
+  margin-top: 30px; /* Move problem statement downward */
+  margin-bottom: 15px; /* Increased spacing */
+}
+
+.card p {
+  color: #a0aec0;
+  font-size: 1.1rem; /* Increased font size */
+  line-height: 1.6; /* Improved readability */
+}
+
+/* Arrow Button */
+.card .arrow {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: var(--primary);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.card .arrow:hover {
+  color: var(--primary-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(1, 1fr); /* 1 card per row on small screens */
+  }
+}
+/* Loader Styling */
+.loader {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  color: #a0aec0;
+}
+/* Load More Button */
+.load-more-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.load-more-button:hover {
+  background-color: var(--primary-dark);
+}
+/* Registration Page Styling */
+.registration-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.registration-page h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffffff; /* White text */
+}
+
+.registration-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.registration-page .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%; /* Ensure form group takes full width */
+}
+
+.registration-page label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #ffffff; /* White text */
+}
+
+.registration-page input {
+  width: 100%; /* Ensure input takes full width of its container */
+  padding: 12px; /* Increased padding for better spacing */
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #1a1a1a; /* Dark background for inputs */
+  color: #ffffff; /* White text */
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.registration-page input::placeholder {
+  color: #a0aec0; /* Light gray placeholder text */
+}
+
+.registration-page .error {
+  color: #ff0000; /* Red color for errors */
+  font-size: 0.875rem; /* Smaller font size */
+  margin-top: 5px; /* Space above the error message */
+}
+
+.registration-page .submit-button {
+  padding: 12px 20px; /* Increased padding for better button size */
+  font-size: 1rem;
+  color: white;
+  background-color: #8b5cf6; /* Purple background */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Ensure button takes full width */
+}
+
+.registration-page .submit-button:hover {
+  background-color: #7c3aed; /* Darker purple on hover */
+}
